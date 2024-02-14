@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-minimal.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0" nonce="7afVmuYZ"></script>
+<div class="wrapper">
+    <section class="sidebar">
+    <div class="sidebar__logo">
+        <img src="images/Logo.png" alt="logo">
+    </div>
+    <div class="sidebar__navigation">
+        <div class="sidebar__options">
+            <div class="sidebar__search-box search-box">
+                <input class="sidebar__search search" type="text" placeholder="Search"></input>
+            </div>
+            <nav class="sidebar__menu">
+                <ul class="sidebar__list">
+                    <li class="sidebar__item">
+                        <a href="index-en.html" class="sidebar__btn sidebar__btn--main">Main</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="flights-en.html" class="sidebar__btn sidebar__btn--flights">Flights</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="passengers-table-en.html" class="sidebar__btn sidebar__btn--passengers sidebar-active">Passengers</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="airplane-en.html" class="sidebar__btn sidebar__btn--planes">Airplanes</a>
+                    </li>
+                    <li class="sidebar__item"> 
+                        <a href="notices-en.html" class="sidebar__btn sidebar__btn--notifications">Notifications</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="sidebar__languages-list">
+                <li class="sidebar__languages-item">
+                    <a class="sidebar__languages-btn js-ru" href="bd.html">RU</a>
+                </li>
+                <li class="sidebar__languages-item">
+                    <a class="sidebar__languages-btn active js-en" href="#">EN</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar__location">
+            <div class="sidebar__location-item">
+                <img class="sidebar__flag" src="./images/sprite.svg#sidebar-flag-icon" alt="sidebar-flag">
+                <span class="sidebar__country">Uzbekistan</span>
+                <button class="sidebar__select-country" type="button"></button>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar__account">
+        <img class="sidebar__account-img" src="./images/sidebar-account-avatar.png" alt="Avatar">
+        <div class="sidebar__account-info">
+            <span class="sidebar__account-name">Kianna Press</span>
+            <span class="sidebar__account-position">Sarge</span>
+        </div>
+        <button class="sidebar__account-btn" type="button"></button>
+    </div>
+</section>
+
+    <main class="main">
+        <section class="database">
+  <div class="database__top">
+    <h3 class="database__title popular-title">DB search</h3>
+    <div class="database__text text-under-popular-title">
+      <p>Find a passenger by passport information or flight information.</p>
+    </div>
+    <a class="database__btn database-btn" href="bd-result-en.html">DB search</a>
+  </div>
+  <ul class="database__tab-list">
+    <li class="database__tab-item">
+      <button
+        class="database__tab-btn database-btn-js active"
+        type="button"
+        data-tab="#dataBase_1"
+      >
+      Data search
+      </button>
+    </li>
+    <li class="database__tab-item">
+      <button
+        class="database__tab-btn database-btn-js"
+        type="button"
+        data-tab="#dataBase_2"
+      >
+      Search by criteria
+      </button>
+    </li>
+  </ul>
+  <form class="database__form database__form--flex database-content show" action="" id="#dataBase_1">
+
+    <div class="database__form-passport database__form-passport--one">
+      <div class="database__form-top">
+        <span class="database__form-title">Passport data</span>
+        <button class="database__form-reset">Reset</button>
+      </div>
+      <span class="database__form-subtitle">Personal information</span>
+      <div class="database__form-inputs">
+        <label class="database__input-group" for="name">
+            <span class="database__input-name">Name</span>
+          <input class="database__input-text" type="text" id="name" name="name" value="Oleg" readonly/>
+        </label>
+        <label class="database__input-group" for="name">
+            <span class="database__input-name">Surname</span>
+            <input class="database__input-text" type="text" id="name" name="name" value="Deeba" readonly/>
+        </label>
+        <label class="database__input-group" for="name">
+            <span class="database__input-name">Patronymic</span>
+            <input class="database__input-text" type="text" id="name" name="name" placeholder="Vladimirovna" readonly/>
+        </label>
+        <label class="database__input-group database__input-group--date" for="name">
+            <span class="database__input-name">Date of birth</span>
+            <button class="database__input-text database__input-text--btn datapicker-btn" type="button">16/03/1999</button>
+            <div class="flights-filters__datepicker datepicker database__datapicker">
+              <div class="datepicker__header">
+                  <button class="datepicker__arrows datepicker__arrows--left" type="button"></button>
+
+                  <div class="datepicker__center">
+                      <span class="datepicker__month">November</span>
+                      <span class="datepicker__year">2022</span>
+                  </div>
+
+                  <button class="datepicker__arrows datepicker__arrows--right" type="button"></button>
+              </div>
+              <ul class="datepicker-list datepicker-list--days">
+                  <li class="datepicker-list__item">
+                      <span>Mo</span>
+                  </li>
+                  <li class="datepicker-list__item">
+                      <span>Tu</span>
+                  </li>
+                  <li class="datepicker-list__item">
+                      <span>We</span>
+                  </li>
+                  <li class="datepicker-list__item">
+                      <span>Th</span>
+                  </li>
+                  <li class="datepicker-list__item">
+                      <span>Fr</span>
+                  </li>
+                  <li class="datepicker-list__item">
+                      <span>Sa</span>
+                  </li>
+                  <li class="datepicker-list__item">
+                      <span>Su</span>
+                  </li>
+              </ul>
+              <ul class="datepicker-list datepicker-list--numbers">
+                  <li class="datepicker-list__item"><span>30</span></li>
+                  <li class="datepicker-list__item"><span>31</span></li>
+                  <li class="datepicker-list__item"><span>1</span></li>
+                  <li class="datepicker-list__item"><span>2</span></li>
+                  <li class="datepicker-list__item"><span>3</span></li>
+                  <li class="datepicker-list__item"><span>4</span></li>
+                  <li class="datepicker-list__item"><span>5</span></li>
+                  <li class="datepicker-list__item"><span>6</span></li>
+                  <li class="datepicker-list__item"><span>7</span></li>
+                  <li class="datepicker-list__item"><span>8</span></li>
+                  <li class="datepicker-list__item"><span>9</span></li>
+                  <li class="datepicker-list__item"><span>10</span></li>
+                  <li class="datepicker-list__item"><span>11</span></li>
+                  <li class="datepicker-list__item"><span>12</span></li>
+                  <li class="datepicker-list__item"><span>13</span></li>
+                  <li class="datepicker-list__item"><span>14</span></li>
+                  <li class="datepicker-list__item"><span>15</span></li>
+                  <li class="datepicker-list__item"><span>16</span></li>
+                  <li class="datepicker-list__item"><span>17</span></li>
+                  <li class="datepicker-list__item"><span>18</span></li>
+                  <li class="datepicker-list__item"><span>19</span></li>
+                  <li class="datepicker-list__item"><span>20</span></li>
+                  <li class="datepicker-list__item"><span>21</span></li>
+                  <li class="datepicker-list__item today"><span>22</span></li>
+                  <li class="datepicker-list__item active"><span>23</span></li>
+                  <li class="datepicker-list__item"><span>24</span></li>
+                  <li class="datepicker-list__item"><span>25</span></li>
+                  <li class="datepicker-list__item"><span>26</span></li>
+                  <li class="datepicker-list__item"><span>27</span></li>
+                  <li class="datepicker-list__item"><span>28</span></li>
+                  <li class="datepicker-list__item"><span>29</span></li>
+                  <li class="datepicker-list__item"><span>30</span></li>
+                  <li class="datepicker-list__item"><span>31</span></li>
+                  <li class="datepicker-list__item"><span>1</span></li>
+                  <li class="datepicker-list__item"><span>2</span></li>
+              </ul>
+            </div>
+        </label>
+        <label class="database__input-group database__input-group--gender" for="name">
+            <span class="database__input-name">Gender</span>
+            <input class="database__input-text" type="text" id="name" name="name" value="Male" readonly/>
+        </label>
+        <label class="database__input-group" for="name">
+            <span class="database__input-name">Birthplace</span>
+            <input class="database__input-text " type="text" id="name" name="name" value="Ukrina, Lviv" readonly/>
+        </label>
+      </div>
+      <span class="database__form-subtitle database__form-subtitle--inner">Documents</span>
+      <div class="database__form-inputs">
+        <label class="database__input-group database__input-group--gender" for="name">
+            <span class="database__input-name">Document type</span>
+          <input class="database__input-text" type="text" id="name" name="name" placeholder="National Passport" readonly/>
+        </label>
+        <label class="database__input-group" for="name">
+            <span class="database__input-name">Document No.</span>
+            <input class="database__input-text" type="text" id="name" name="name" placeholder="AB123456" readonly/>
+        </label>
+        <label class="database__input-group" for="name">
+            <span class="database__input-name">ID number</span>
+            <input class="database__input-text" type="text" id="name" name="name" placeholder="12345678"/>
+        </label>
+        <label class="database__input-group database__input-group--date" for="name">
+            <span class="database__input-name">Date of issue of document</span>
+            <input class="database__input-text" type="text" id="name" name="name" placeholder="DD/MM/YY" readonly/>
+        </label>
+        <label class="database__input-group database__input-group--date" for="name">
+            <span class="database__input-name">Validity of the document</span>
+            <input class="database__input-text " type="text" id="name" name="name" placeholder="DD/MM/YY"  readonly/>
+        </label>
+        <label class="database__input-group database__input-group--gender" for="name">
+            <span class="database__input-name">Place of issue</span>
+            <input class="database__input-text" type="text" id="name" name="name" placeholder="12345678" readonly/>
+        </label>
+        <label class="database__input-group database__input-group--gender" for="name">
+            <span class="database__input-name">Nationality</span>
+            <input class="database__input-text " type="text" id="name" name="name" placeholder="Romania"  readonly/>
+        </label>
+      </div>
+    </div>
+
+    <div class="database__form-right">
+        <div class="database__form-passport">
+            <div class="database__form-top">
+              <span class="database__form-title">Flight data</span>
+              <button class="database__form-reset">Reset</button>
+            </div>
+            <div class="database__form-inputs">
+                <label class="database__input-group database__input-group--date" for="name">
+                  <span class="database__input-name">Date of ticket booking/purchase</span>
+                  <button class="database__input-text database__input-text--placeholder database__input-text--btn datapicker-btn" type="button">DD/MM/YY</button>
+                  <div class="flights-filters__datepicker datepicker database__datapicker">
+                    <div class="datepicker__header">
+                        <button class="datepicker__arrows datepicker__arrows--left" type="button"></button>
+
+                        <div class="datepicker__center">
+                            <span class="datepicker__month">November</span>
+                            <span class="datepicker__year">2022</span>
+                        </div>
+
+                        <button class="datepicker__arrows datepicker__arrows--right" type="button"></button>
+                    </div>
+                    <ul class="datepicker-list datepicker-list--days">
+                        <li class="datepicker-list__item">
+                            <span>Mo</span>
+                        </li>
+                        <li class="datepicker-list__item">
+                            <span>Tu</span>
+                        </li>
+                        <li class="datepicker-list__item">
+                            <span>We</span>
+                        </li>
+                        <li class="datepicker-list__item">
+                            <span>Th</span>
+                        </li>
+                        <li class="datepicker-list__item">
+                            <span>Fr</span>
+                        </li>
+                        <li class="datepicker-list__item">
+                            <span>Sa</span>
+                        </li>
+                        <li class="datepicker-list__item">
+                            <span>Su</span>
+                        </li>
+                    </ul>
+                    <ul class="datepicker-list datepicker-list--numbers">
+                        <li class="datepicker-list__item"><span>30</span></li>
+                        <li class="datepicker-list__item"><span>31</span></li>
+                        <li class="datepicker-list__item"><span>1</span></li>
+                        <li class="datepicker-list__item"><span>2</span></li>
+                        <li class="datepicker-list__item"><span>3</span></li>
+                        <li class="datepicker-list__item"><span>4</span></li>
+                        <li class="datepicker-list__item"><span>5</span></li>
+                        <li class="datepicker-list__item"><span>6</span></li>
+                        <li class="datepicker-list__item"><span>7</span></li>
+                        <li class="datepicker-list__item"><span>8</span></li>
+                        <li class="datepicker-list__item"><span>9</span></li>
+                        <li class="datepicker-list__item"><span>10</span></li>
+                        <li class="datepicker-list__item"><span>11</span></li>
+                        <li class="datepicker-list__item"><span>12</span></li>
+                        <li class="datepicker-list__item"><span>13</span></li>
+                        <li class="datepicker-list__item"><span>14</span></li>
+                        <li class="datepicker-list__item"><span>15</span></li>
+                        <li class="datepicker-list__item"><span>16</span></li>
+                        <li class="datepicker-list__item"><span>17</span></li>
+                        <li class="datepicker-list__item"><span>18</span></li>
+                        <li class="datepicker-list__item"><span>19</span></li>
+                        <li class="datepicker-list__item"><span>20</span></li>
+                        <li class="datepicker-list__item"><span>21</span></li>
+                        <li class="datepicker-list__item today"><span>22</span></li>
+                        <li class="datepicker-list__item active"><span>23</span></li>
+                        <li class="datepicker-list__item"><span>24</span></li>
+                        <li class="datepicker-list__item"><span>25</span></li>
+                        <li class="datepicker-list__item"><span>26</span></li>
+                        <li class="datepicker-list__item"><span>27</span></li>
+                        <li class="datepicker-list__item"><span>28</span></li>
+                        <li class="datepicker-list__item"><span>29</span></li>
+                        <li class="datepicker-list__item"><span>30</span></li>
+                        <li class="datepicker-list__item"><span>31</span></li>
+                        <li class="datepicker-list__item"><span>1</span></li>
+                        <li class="datepicker-list__item"><span>2</span></li>
+                    </ul>
+                  </div>
+                </label>
+                <label class="database__input-group database__input-group--date" for="name">
+                  <span class="database__input-name">Departure time and date</span>
+                  <input class="database__input-text" type="text" id="name" name="name" placeholder="DD/MM/YY"/>
+                </label>
+                <label class="database__input-group" for="name">
+                  <span class="database__input-name">Departure airport</span>
+                  <input class="database__input-text" type="text" id="name" name="name" placeholder="Bishkek, Kyrgyzstan (FRU)" readonly/>
+                </label>
+                <label class="database__input-group" for="name">
+                  <span class="database__input-name">Arrival airport</span>
+                  <input class="database__input-text" type="text" id="name" name="name" placeholder="Bishkek, Kyrgyzstan (FRU)">
+                </label>
+                <label class="database__input-group" for="name">
+                  <span class="database__input-name">Airplane seat</span>
+                  <input class="database__input-text" type="text" id="name" name="name" placeholder="F-16" readonly/>
+                </label>
+                <label class="database__input-group" for="name">
+                  <span class="database__input-name">Agent's data</span>
+                  <input class="database__input-text " type="text" id="name" name="name" placeholder="POLAN DAVID" readonly/>
+                </label>
+                <label class="database__input-group database__input-group--date" for="name">
+                    <span class="database__input-name">Ticket purchase date</span>
+                    <input class="database__input-text" type="text" id="name" name="name" placeholder="DD/MM/YY" readonly/>
+                </label>
+                <label class="database__input-group database__input-group--date" for="name">
+                    <span class="database__input-name">Date of ticket purchase</span>
+                    <input class="database__input-text" type="text" id="name" name="name" placeholder="DD/MM/YY" readonly/>
+                </label>
+            </div>
+        </div>
+        <div class="database__form-passport">
+            <div class="database__form-top">
+              <span class="database__form-title">Additional data</span>
+              <button class="database__form-reset">Reset</button>
+            </div>
+            <div class="database__form-inputs">
+              <label class="database__input-group" for="name">
+                  <span class="database__input-name">Visa number</span>
+                <input class="database__input-text" type="text" id="name" name="name" placeholder="12345678" readonly/>
+              </label>
+              <label class="database__input-group" for="name">
+                  <span class="database__input-name">Visa type</span>
+                  <input class="database__input-text" type="text" id="name" name="name" placeholder="D" />
+              </label>
+              <label class="database__input-group database__input-group--date" for="name">
+                  <span class="database__input-name">Date of issue</span>
+                  <input class="database__input-text" type="text" id="name" name="name" placeholder="DD/MM/YY" readonly/>
+              </label>
+              <label class="database__input-group database__input-group--date" for="name">
+                <span class="database__input-name">Expiration date</span>
+                <input class="database__input-text" type="text" id="name" name="name" placeholder="DD/MM/YY" readonly/>
+            </label>
+    
+            </div>
+        </div>
+    </div>
+
+  </form>
+
+  <form class="database__form database-content" action="" id="#dataBase_2">
+    <ul class="database__checkbox-list">
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Suspicions</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="drugs">
+                    <input class="database__variant" type="checkbox" id="drugs" name="drugs" required>
+                    <span class="database__checkbox"></span>
+                    Drug dealing
+                </label>
+                <label class="database__privacy" for="laundering">
+                    <input class="database__variant" type="checkbox" id="laundering" name="laundering" required checked>
+                    <span class="database__checkbox"></span>
+                    Money laundering
+                </label>
+                <label class="database__privacy" for="human">
+                    <input class="database__variant" type="checkbox" id="human" name="human" required>
+                    <span class="database__checkbox"></span>
+                    Human trafficking
+                </label>
+                <label class="database__privacy" for="terrorism">
+                    <input class="database__variant" type="checkbox" id="terrorism" name="terrorism" required checked>
+                    <span class="database__checkbox"></span>
+                    Terrorism
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Travel companions</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="companions-none">
+                    <input class="database__variant" type="checkbox" id="companions-none" name="companions-none" required>
+                    <span class="database__checkbox"></span>
+                    No
+                </label>
+                <label class="database__privacy" for="companions-one">
+                    <input class="database__variant" type="checkbox" id="companions-one" name="companions-one" required checked>
+                    <span class="database__checkbox"></span>
+                    One
+                </label>
+                <label class="database__privacy" for="companions-two">
+                    <input class="database__variant" type="checkbox" id="companions-two" name="companions-two" required>
+                    <span class="database__checkbox"></span>
+                    Two
+                </label>
+                <label class="database__privacy" for="companions-more">
+                    <input class="database__variant" type="checkbox" id="companions-more" name="companions-more" required>
+                    <span class="database__checkbox"></span>
+                    3 or more
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Threat level</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="risk-one">
+                    <input class="database__variant" type="checkbox" id="risk-one" name="risk-one" required>
+                    <span class="database__checkbox"></span>
+                    > 25
+                </label>
+                <label class="database__privacy" for="risk-two">
+                    <input class="database__variant" type="checkbox" id="risk-two" name="risk-two" required>
+                    <span class="database__checkbox"></span>
+                    > 50
+                </label>
+                <label class="database__privacy" for="risk-three">
+                    <input class="database__variant" type="checkbox" id="risk-three" name="risk-three" required>
+                    <span class="database__checkbox"></span>
+                    > 75
+                </label>
+                <label class="database__privacy" for="risk-four">
+                    <input class="database__variant" type="checkbox" id="risk-four" name="terrrisk-four" required>
+                    <span class="database__checkbox"></span>
+                    > 90
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Visa</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="underhanded">
+                    <input class="database__variant" type="checkbox" id="underhanded" name="underhanded" required>
+                    <span class="database__checkbox"></span>
+                    Underhanded
+                </label>
+                <label class="database__privacy" for="fake">
+                    <input class="database__variant" type="checkbox" id="fake" name="fake" required>
+                    <span class="database__checkbox"></span>
+                    Fake
+                </label>
+                <label class="database__privacy" for="no-info">
+                    <input class="database__variant" type="checkbox" id="no-info" name="no-info" required>
+                    <span class="database__checkbox"></span>
+                    No information
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Interpol wanted</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="wanted-yes">
+                    <input class="database__variant" type="checkbox" id="wanted-yes" name="wanted-yes" required>
+                    <span class="database__checkbox"></span>
+                    No
+                </label>
+                <label class="database__privacy" for="wanted-no">
+                    <input class="database__variant" type="checkbox" id="wanted-no" name="wanted-no" required checked>
+                    <span class="database__checkbox"></span>
+                    Yes
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Documents</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="confirmed">
+                    <input class="database__variant" type="checkbox" id="confirmed" name="confirmed" required>
+                    <span class="database__checkbox"></span>
+                    Confirmed
+                </label>
+                <label class="database__privacy" for="unconfirmed">
+                    <input class="database__variant" type="checkbox" id="unconfirmed" name="unconfirmed" required checked>
+                    <span class="database__checkbox"></span>
+                    Unconfirmed
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Number of flights</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="count-one">
+                    <input class="database__variant" type="checkbox" id="count-one" name="count-one" required>
+                    <span class="database__checkbox"></span>
+                    0
+                </label>
+                <label class="database__privacy" for="count-two">
+                    <input class="database__variant" type="checkbox" id="count-two" name="count-two" required >
+                    <span class="database__checkbox"></span>
+                    0-5
+                </label>
+                <label class="database__privacy" for="count-three">
+                    <input class="database__variant" type="checkbox" id="count-three" name="count-three" required>
+                    <span class="database__checkbox"></span>
+                    5-15
+                </label>
+                <label class="database__privacy" for="count-four">
+                    <input class="database__variant" type="checkbox" id="count-four" name="count-four" required >
+                    <span class="database__checkbox"></span>
+                    15+
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Social media check</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="suspicious-posts">
+                    <input class="database__variant" type="checkbox" id="suspicious-posts" name="suspicious-posts" required>
+                    <span class="database__checkbox"></span>
+                    Suspicious posts
+                </label>
+                <label class="database__privacy" for="enemy-slogans">
+                    <input class="database__variant" type="checkbox" id="enemy-slogans" name="enemy-slogans" required>
+                    <span class="database__checkbox"></span>
+                    Hostile slogans
+                </label>
+                <label class="database__privacy" for="suspicious-contacts">
+                    <input class="database__variant" type="checkbox" id="suspicious-contacts" name="suspicious-contacts" required>
+                    <span class="database__checkbox"></span>
+                    Suspicious contacts
+                </label>
+                <label class="database__privacy" for="no-social-media-pages">
+                    <input class="database__variant" type="checkbox" id="no-social-media-pages" name="no-social-media-pages" required>
+                    <span class="database__checkbox"></span>
+                    No social media pages
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">Method of purchasing a ticket</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="internet">
+                    <input class="database__variant" type="checkbox" id="internet" name="internet" required>
+                    <span class="database__checkbox"></span>
+                    Internet
+                </label>
+                <label class="database__privacy" for="airport">
+                    <input class="database__variant" type="checkbox" id="airport" name="airport" required>
+                    <span class="database__checkbox"></span>
+                    At the airport
+                </label>
+            </div>
+        </li>
+        <li class="database__checkbox-item">
+            <span class="database__checkbox-title">No. of Previously Visited Countries</span>
+            <div class="database__checkbox-box">
+                <label class="database__privacy" for="visited-one">
+                    <input class="database__variant" type="checkbox" id="visited-one" name="visited-one" required>
+                    <span class="database__checkbox"></span>
+                   0
+                </label>
+                <label class="database__privacy" for="visited-one">
+                    <input class="database__variant" type="checkbox" id="visited-one" name="visited-one" required>
+                    <span class="database__checkbox"></span>
+                   0-5
+                </label>
+                <label class="database__privacy" for="visited-one">
+                    <input class="database__variant" type="checkbox" id="visited-one" name="visited-one" required>
+                    <span class="database__checkbox"></span>
+                    5-15
+                </label>
+                <label class="database__privacy" for="visited-one">
+                    <input class="database__variant" type="checkbox" id="visited-one" name="visited-one" required>
+                    <span class="database__checkbox"></span>
+                    15+
+                </label>
+            </div>
+        </li>
+    </ul>
+    <h3 class="database__title popular-title">Manual search</h3>
+    <div class="database__text text-under-popular-title">
+      <p>Enter the search data manually. In the form "Information < / = / > Value", e.g. "Number of flights = 5"</p>
+    </div>
+    <ul class="database__manual-search">
+        <li class="database__manual-item">
+            <input class="database__manual-input" type="text" placeholder="Information" readonly>
+            <button class="database__manual-select" type="button"> <span>=</span></button>
+            <input class="database__manual-input" type="text" placeholder="Significance" readonly>
+        </li>
+        <li class="database__manual-item">
+            <input class="database__manual-input" type="text" placeholder="Information" readonly>
+            <button class="database__manual-select" type="button"> <span>></span></button>
+            <input class="database__manual-input" type="text" placeholder="Significance" readonly>
+        </li>
+        <li class="database__manual-item">
+            <input class="database__manual-input" type="text" placeholder="Information" readonly>
+            <button class="database__manual-select" type="button"> <span><</span></button>
+            <input class="database__manual-input" type="text" placeholder="Significance" readonly>
+        </li>
+        <li class="database__manual-item">
+            <input class="database__manual-input" type="text" placeholder="Information" readonly>
+            <button class="database__manual-select" type="button"> <span>=</span></button>
+            <input class="database__manual-input" type="text" placeholder="Significance" readonly>
+        </li>
+    </ul>
+  </form>
+</section>
+
+    </main>
+</div>
+
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js" integrity="sha512-51WDTV7haD9BBDc8RWH2r5TnuSiRyAqEnbGyuKHYn+qpYCrCckxFeqlr1I5UoOULijyLV2vnHO9LS4MrAzHxwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/main.min.js"></script>
+
+
+
+    </body>
+
+</html>
